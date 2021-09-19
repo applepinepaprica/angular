@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BasicFormComponent } from './basic-form/basic-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NestedFormComponent } from './nested-form/nested-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BasicFormComponent
+    BasicFormComponent,
+    NestedFormComponent
   ],
   imports: [
     BrowserModule,
