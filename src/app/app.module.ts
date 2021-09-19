@@ -6,12 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BasicFormComponent } from './basic-form/basic-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NestedFormComponent } from './nested-form/nested-form.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BasicFormComponent,
-    NestedFormComponent
+    NestedFormComponent,
+    DynamicFormComponent
   ],
   imports: [
     BrowserModule,
