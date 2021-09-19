@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-basic-form',
@@ -13,10 +13,24 @@ export class BasicFormComponent implements OnInit {
   
   ngOnInit() {
     this.myForm = this.fb.group({
-      email: '',
-      message: ''
+      email: ['', [
+        Validators.required,
+        Validators.email
+      ]],
+      password: ['', [
+        Validators.required,
+        Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$')
+      ]]
     })
 
     this.myForm.valueChanges.subscribe(console.log)
+  }
+
+  get email() {
+    return this.myForm.get('email');
+  }
+
+  get password() {
+    return this.myForm.get('password');
   }
 }

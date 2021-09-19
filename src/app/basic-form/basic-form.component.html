@@ -2,5 +2,12 @@
 
     Value: {{ myForm.value | json }}
     <input formControlName="email">
-    <input formControlName="message">
+    <span *ngIf="email.invalid && email.touched">
+      Your email does not look right
+  </span>
+    <input formControlName="password">
+    <span *ngIf="password.invalid && password.touched">
+      That password sucks...
+  </span>
+  <button [disabled]="myForm.invalid">Let's Do it!</button>
   </form>
